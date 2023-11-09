@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>Alan 💘 Merin</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,600,700%7COpen+Sans:300,400,700%7CPlayfair+Display:400,400i,700,700i" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Cookie&family=Fleur+De+Leah&family=Righteous&display=swap" rel="stylesheet" />
+  <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+  <style>
+   html {
+    scroll-behavior: smooth;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+   }
+
+   body,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+    font-family: "Lato", sans-serif;
+   }
+
+   body,
+   html {
+    height: 100%;
+    line-height: 1.8;
+   }
+
+   .screen {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+   }
+
+   .screen>#home {
+    scroll-snap-align: start;
+   }
+
+   /* Create a Parallax Effect */
+   .bgimg-1,
+   .bgimg-2,
+   .bgimg-3,
+   .bgimg-4,
+   .bgimg-5 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+   }
+
+   /* First image (Logo. Full height) */
+   .bgimg-1 {
+    background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEimyCuMF9TEbPtT3NKqf6MOR1oyTJ24nPoPqr9tRBKJ1XATD2puva7OS5j2x0UTG5Q4W0mmiLJN_UEjOKp1176aIITsBxHgwc0YOtA_oHP8DyBYGo--H3N4mDgXNWewXTe4ZowPEEMIEiuIhf9RFZprsMrxzflk8to8l-qQ2hLYewnKbFp6jgNosUAhKqQ=w480-h640");
+    min-height: 100%;
+   }
+
+   /* Second image (Portfolio) */
+   .bgimg-2 {
+    background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEg6Mvj6MDTvoFSls1-TRGWzTN1qPkzfyIljnw8fxI7g5ivXMDWa8qP8PTQD3Cjb16te50_jfx5Mpj6TNPV4zNyJmclSR7yz4xMaAzxlDWXodE1Wuq61moF1L_75EU-ceYAzqeZXxd1flNMgUPbTPIGhWOEsGC8EdRd5eIgPeBjkTcvrnGsywJvxeVI62Js=s16000");
+    min-height: 100%;
+   }
+
+   /* Third image (Portfolio) */
+   .bgimg-3 {
+    background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-QgfIyWtqTROTVGUVIOOVxmN1_FRWV2scmqZ1d6S_IOttyakI0WRThKSevhd3500gvp5K3JQHoxSIxHnHPCksWW1fOPEy59VZd83f_kRR4FW5rWLyHFntrbv0enNIspGNJ9qR-PPcFYB5sDxpUPvnIaGeNjOuMV7XDaYQ-yGwKlkD7f111FWtReer/s16000/christmas-background-christmas-white-gold-decorations-white-background-flat-lay-top-view-copy-space.jpg");
+    min-height: 100%;
+   }
+
+   /* Third image (Portfolio) */
+   .bgimg-6 {
+    background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEigke2JLfcGA8t_VQRZ8_2XE8f-luegr1a_RRaxHs4LBGI6D4bvdeeWJZNv5z4APrbc6A33flgUL6SjvVZDUQ0IKbnuH7qeThrOLoCW_hpdzQlJa-x_VKIJwDZPqrHrPkjtsGZF5_3f0cV94yHwcguor84pI2K1i16MEeQ-oQR9LTu_-cPRF3ndFH1k8hg=s16000");
+    min-height: 100%;
+   }
+
+   /* Fourth image (Contact) */
+   .bgimg-4 {
+    background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEhHkkjDwInKv1MwOnZDfrh9Op41kWxrWxjxdnQ2Ifkf84V1PuqVNDBlNPPD2vsIqG79zypsVICNRAjdQXlSmCGNRXlSy292o2jc78FnUtdC5RdDtsF6koGvHFgjdtlekf96syYkq9teZ6TX5LdVnroIOZwk-PGqEMMzfgG5O8dygZMyRDquziUilfKuAsw=s16000");
+    min-height: 200px;
+    filter: saturate(2);
+    filter: brightness(100%);
+   }
+
+   /* Fifth image (Contact) */
+   .bgimg-5 {
+    background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEgxsZBiN_u9-dxUVpHMeg52IhgPUtqDTJ2qzfeNGLB_b0AlBY_f68yRO8JDukr5EpQs3i8avt4u0uJyJH_0qfQAmIiTElPRIbap0GETdqrM3Hl-4jWSH-h4fW11SmZ0VPHM1IrXcNVNscE34jq219ydz4jBTbiDeHmcRjcZ-waeNKWUMWeRb6UIgvs23KA=w480-h640");
+    min-height: 200px;
+   }
+
+   .w3-wide {
+    letter-spacing: 10px;
+   }
+
+   .w3-hover-opacity {
+    cursor: pointer;
+   }
+
+   .w3-hover-opacity:hover {
+    opacity: 0.9 !important;
+    transform: scale(1.1);
+   }
+
+   .zoom {
+    transition: transform 0.3s;
+   }
+
+   .font-one {
+    font: 900 24px/18px Dosis, Arial;
+    color: #333;
+    text-transform: uppercase;
+    position: relative;
+    top: 22px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+   }
+
+   .font-three {
+    font-family: "Righteous", cursive;
+   }
+
+   .font-four {
+    font-family: "Cherry Bomb One", cursive;
+    font: 900 24px/18px Dosis, Arial;
+   }
+
+   .wrapper-bottom {
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    margin-top: -80px !important;
+   }
+
+   .no-opacity {
+    opacity: 1 !important;
+   }
+
+   .cover {
+    height: 200px;
+    object-fit: cover;
+   }
+
+   .grayscale {
+    filter: grayscale(70%);
+   }
+
+   .grayscale:hover {
+    filter: grayscale(0%);
+   }
+
+   @media screen and (min-width: 991px) {
+    .gallery {
+     max-width: 1100px !important;
+    }
+
+    .bgimg-1 {}
+   }
+
+   @media screen and (min-width: 702px) {
+    .line-break {
+     display: none;
+    }
+   }
+
+   @media screen and (max-width: 702px) {
+    .sml-scrn {
+     width: 240px !important;
+    }
+   }
+
+   #myModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+   }
+
+   .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+   }
+
+   .close {
+    color: #aaa;
+    margin: -25px;
+    font-size: 20px;
+    font-weight: bold;
+   }
+
+   .close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+   }
+
+   /* Add your CSS styles here */
+   #confetti-container1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -5px;
+    overflow: hidden;
+    pointer-events: none;
+   }
+
+   #confetti-container2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -10px;
+    overflow: hidden;
+    pointer-events: none;
+   }
+
+   .confetti {
+    position: absolute;
+    top: -20px;
+    animation: confettiFall 3s infinite;
+   }
+
+   @keyframes confettiFall {
+    0% {
+     transform: translateY(0) rotate(0deg);
+     opacity: 1;
+    }
+
+    100% {
+     transform: translateY(100vh) rotate(720deg);
+     opacity: 0;
+    }
+   }
+  </style>
+ </head>
+ <body translate="no">
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top w3-center">
+   <div id="myModal" class="mymodel">
+    <div class="modal-content">
+     <div id="confetti-container1"></div>
+     <div class="w3-center w3-padding-large">
+      <span class="close w3-text-hover-red" style="float:right;">
+       <i class="fa fa-close"></i>
+      </span>
+      <br />
+      <img src="https://me-niyas-ali.github.io/getfile/happy-couple.jpg" alt="We're Married!❤" style="width:100%;max-width:500px;height:auto;" class="sml-scrn" />
+      <br />
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaa7P2rF4pZPz_Dv6aB_8Yd_M1I-6_m4QdpRsQqzXgBT8yoKHfWSvD-UDbmEpQ_l7w8vNZgwIQE40JhfvUalRzhpWDFJTXW59G76UnIEH41vvJJuyQg9roxWUm1z6I3z39D4gcb_JKBGmTz_qbu-xrEajrzcpAqvu8ed_oZDY3JE0pelw7mkuT6Tiz/s16000/just_gold.gif" alt="Save The Date" style="width:100%;max-width:250px;height:auto;" class="sml-scrn" />
+     </div>
+     <span class="w3-center w3-xlarge font-three w3-animate-opacity">And they have tied the <br />knot! </span>
+     <br />
+     <span class="w3-center w3-medium font-three w3-animate-opacity">Checkout the images below...</span>
+     <br />
+     <a href="#gallery" onclick="closeModel()" class="w3-button font-three w3-padding w3-medium w3-black w3-hover-grey">
+      <i class="fa fa-photo w3-margin-right"></i>View Images </a>
+    </div>
+   </div>
+   <div class="w3-bar" id="myNavbar" style="top:5px">
+    <a href="#home" class="w3-bar-item font-three w3-button">
+     <i class="fa fa-home"></i> HOME </a>
+    <a href="#story" class="w3-bar-item font-three w3-button">
+     <i class="fa fa-user"></i> THE COUPLE </a>
+    <a href="#gallery" class="w3-bar-item font-three w3-button">
+     <i class="fa fa-th"></i> GALLERY </a>
+   </div>
+  </div>
+  <!-- First Parallax Image with Logo Text -->
+  <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+   <center>
+    <div class="w3-display-topmiddle" style="white-space:nowrap;top:150px;">
+     <span class="w3-center w3-padding-large w3-xlarge w3-wide font-one w3-animate-opacity">ALAN 💘 MERIN</span>
+     <br />
+     <br />
+     <span class="w3-center w3-padding-large w3-medium w3-wide font-three w3-animate-opacity">22-SEP-24</span>
+    </div>
+    <div class="w3-display-middle">
+     <div class="w3-center w3-padding-large wrapper-bottom">
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEicuoEUqPq4_0SGJ61dtP0SJUqkUqZVqPaLAyGyWxWt9FEdolvFZirLafZwo4g3nyyiUxf6cV-T4oUZvWtwJ2BhQg6XwOp02DPaoa-7YFWmKDVbJjML-VbdPKVn5IzYr4Kymxp7dCTbrVhFHnqZYKX4wMeb995CHjIoEem5qiIpfsLFbS69RerR82j68lE=w640-h434" alt="Our Wedding" style="width:270px;height:160px;" />
+     </div>
+    </div>
+   </center>
+  </div>
+  <!-- Second Parallax Image with Portfolio Text -->
+  <div class="bgimg-2 w3-display-container w3-opacity-min">
+   <div id="confetti-container2"></div>
+   <center>
+    <div class="w3-display-middle">
+     <div class="w3-center w3-padding-large">
+      <img src="" class="gif" data-src="https://blogger.googleusercontent.com/img/a/AVvXsEgwhiUJvQRY48lvpZb6YqFViJM3Om2JNKtN6anaoXb_iqpeGKHb3cfNHHqMW56z4QOu499cjn_91_D-ZKAlRZvXYv4kYfUX7jQdPAFYc68qynnXotFYcL6vGCbN-AoEJP0s25xDi0DIDXTCBuHmCb3zzzwpqfBSO5ChxoD_oxrpHosrgOiMw4_p_Z1iZ4I=w640-h547" alt="Save The Date" style="width:200px;height:200px;" />
+     </div>
+     <span class="w3-xlarge w3-text-white font-three w3-wide">SAVE THE DATE</span>
+     <br />
+     <span class="w3-xxlarge w3-text-white font-three w3-wide">22.SEP.2024</span>
+     <br />
+     <center>
+      <hr style="width:65%;border:2px solid white" class="w3-round" />
+     </center>
+     <p class="w3-xlarge w3-text-white font-four time-text w3-wide" style="white-space:nowrap;" id="demo"></p>
+    </div>
+   </center>
+  </div>
+  <!-- Third Parallax Image with Portfolio Text -->
+  <div class="bgimg-3 w3-display-container w3-opacity-min" id="story">
+   <center>
+    <div class="w3-display-middle">
+     <div class="w3-center w3-padding-large">
+      <span class="w3-xxlarge w3-text-black font-one w3-wide" style="white-space:nowrap;">THE COUPLE</span>
+      <br />
+      <center>
+       <hr style="width:60%;border:2px solid black" class="w3-round" />
+      </center>
+      <a href="#">
+       <img src="/w3images/avatar_g2.jpg" style="width:60%;" class="w3-circle w3-margin zoom w3-hover-opacity" />
+      </a>
+      <br />
+      <span class="w3-large w3-text-black font-three w3-wide">ALAN</span>
+      <br />
+      <br />
+      <img src="" class="gif" data-src="https://blogger.googleusercontent.com/img/a/AVvXsEitOFyzCZFQ2NtF5z7z4l8Jbv6iom0wBUXu5X_2KrQ0nQMJd4OvQYSzYIb6aWpkILE5X21mP2hVutQiVnvHZftq8dd_dI6zQYXY0mG1Sb_L32KH6lRg7onO0S0fjVfybZF1jqIH2fjogkmNfbwjnX_STLn9fX57xLT8xCUkYuwVFGsIZ5ujMpH8zVj7KnE=s16000" alt="mr & mrs" style="width:200px;height:80px;" />
+      <br />
+      <br />
+      <a href="#">
+       <img src="/w3images/avatar_g2.jpg" style="width:60%;" class="w3-circle w3-margin zoom w3-hover-opacity" />
+      </a>
+      <br />
+      <span class="w3-large w3-text-black font-three w3-wide">MERIN</span>
+     </div>
+    </div>
+   </center>
+  </div>
+  <!-- Fourth Parallax Image with Portfolio Text -->
+  <div class="bgimg-4 w3-display-container w3-opacity-min" id="gallery">
+   <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white font-one w3-wide" style="white-space:nowrap;">GALLERY</span>
+    <br />
+    <center>
+     <hr style="width:60%;border:2px solid white" class="w3-round" />
+    </center>
+   </div>
+  </div>
+  <!-- Container (Portfolio Section) -->
+  <div class="bgimg-4 w3-display-container w3-padding-64 w3-opacity-min" id="portfolio">
+   <center>
+    <!-- Responsive Grid. -->
+    <div class="w3-row-padding gallery" style="max-width:550px">
+     <div class="w3-col l3 s6">
+      <div class="w3-container w3-padding">
+       <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjbejpTCI8dY_OlPEJwVsvbZF_j8uWEhZUbRfm5gq4cBuobhn1I30ZHZyOg9DljynKGOY2zn230euopYJp0o96sd8HVDYget-y5rUdZO33KnhA_VOypk8PJ4aosA1la5xDDoVJY-wGegpZvRRZCFQ9tD5HC3B7OgnEKaZGRYsWnx4pyg_fsVbQZcK1AfII=s16000" onclick="onClick(this)" class="zoom grayscale cover w3-hover-opacity" style="width:100%" />
+      </div>
+      <div class="w3-container w3-padding">
+       <img src="https://blogger.googleusercontent.com/img/a/AVvXsEigke2JLfcGA8t_VQRZ8_2XE8f-luegr1a_RRaxHs4LBGI6D4bvdeeWJZNv5z4APrbc6A33flgUL6SjvVZDUQ0IKbnuH7qeThrOLoCW_hpdzQlJa-x_VKIJwDZPqrHrPkjtsGZF5_3f0cV94yHwcguor84pI2K1i16MEeQ-oQR9LTu_-cPRF3ndFH1k8hg=s16000" onclick="onClick(this)" class="zoom grayscale cover w3-hover-opacity" style="width:100%" />
+      </div>
+     </div>
+     <div class="w3-col l3 s6">
+      <div class="w3-container w3-padding">
+       <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgY-q4nC3OG9-Th6lPgZoDr_BIdD0W899sULTmqWx41xUnT3isoQ-RX8L3VTgWGMCW2BVavhtZlogGddQsI51McdWdoO-JWIvu5mF-9TggzadDnsJVXanHQIPg1gCAsALMPdmkGZH2RJZW98itkU0VqKxIE5aO01aUROwBPvChfuKBkiF_wkigqA9WBuio=s16000" onclick="onClick(this)" class="zoom grayscale cover w3-hover-opacity" style="width:100%" />
+      </div>
+      <div class="w3-container w3-padding">
+       <img src="https://blogger.googleusercontent.com/img/a/AVvXsEg6Mvj6MDTvoFSls1-TRGWzTN1qPkzfyIljnw8fxI7g5ivXMDWa8qP8PTQD3Cjb16te50_jfx5Mpj6TNPV4zNyJmclSR7yz4xMaAzxlDWXodE1Wuq61moF1L_75EU-ceYAzqeZXxd1flNMgUPbTPIGhWOEsGC8EdRd5eIgPeBjkTcvrnGsywJvxeVI62Js=s16000" onclick="onClick(this)" class="zoom grayscale cover w3-hover-opacity" style="width:100%" />
+      </div>
+     </div>
+     <div class="w3-col l3 s6">
+      <div class="w3-container w3-padding">
+       <img src="https://blogger.googleusercontent.com/img/a/AVvXsEimyCuMF9TEbPtT3NKqf6MOR1oyTJ24nPoPqr9tRBKJ1XATD2puva7OS5j2x0UTG5Q4W0mmiLJN_UEjOKp1176aIITsBxHgwc0YOtA_oHP8DyBYGo--H3N4mDgXNWewXTe4ZowPEEMIEiuIhf9RFZprsMrxzflk8to8l-qQ2hLYewnKbFp6jgNosUAhKqQ=s16000" onclick="onClick(this)" class="zoom grayscale cover w3-hover-opacity" style="width:100%" />
+      </div>
+      <div class="w3-container w3-padding">
+       <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhHkkjDwInKv1MwOnZDfrh9Op41kWxrWxjxdnQ2Ifkf84V1PuqVNDBlNPPD2vsIqG79zypsVICNRAjdQXlSmCGNRXlSy292o2jc78FnUtdC5RdDtsF6koGvHFgjdtlekf96syYkq9teZ6TX5LdVnroIOZwk-PGqEMMzfgG5O8dygZMyRDquziUilfKuAsw=s16000" onclick="onClick(this)" class="zoom grayscale cover w3-hover-opacity" style="width:100%" />
+      </div>
+     </div>
+     <div class="w3-col l3 s6">
+      <div class="w3-container w3-padding">
+       <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgxsZBiN_u9-dxUVpHMeg52IhgPUtqDTJ2qzfeNGLB_b0AlBY_f68yRO8JDukr5EpQs3i8avt4u0uJyJH_0qfQAmIiTElPRIbap0GETdqrM3Hl-4jWSH-h4fW11SmZ0VPHM1IrXcNVNscE34jq219ydz4jBTbiDeHmcRjcZ-waeNKWUMWeRb6UIgvs23KA=s16000" onclick="onClick(this)" class="zoom grayscale cover w3-hover-opacity" style="width:100%" />
+      </div>
+      <div class="w3-container w3-padding">
+       <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhH3Yfun0-F63JkdRElyKPuGRzYx1RHBQ-SbI2hSBzM4_MyB4nJTgDFM2OZgNog1Uo2QkNdUVGmxzdF7TYHo9NbisvdYw_njQAIZovEYpr3NmmSfMep0eQTgAT6Mzhlh8cW0daKFCLDrcHa-LzxwsfGvYhsSs2Xvf9uxlQ_nB189pnO8mKbYs3m4j807Q4=s16000" onclick="onClick(this)" class="zoom grayscale cover w3-hover-opacity" style="width:100%" />
+      </div>
+     </div>
+    </div>
+   </center>
+  </div>
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+   <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image">
+    <i class="fa fa-remove"></i>
+   </span>
+   <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image" />
+    <p id="caption" class="w3-opacity w3-large"></p>
+   </div>
+  </div>
+  <!-- Forth Parallax Image with Portfolio Text -->
+  <div class="bgimg-5 w3-display-container w3-opacity-min" id="venue">
+   <div class="w3-display-middle w3-center">
+    <br />
+    <span class="w3-xxlarge w3-text-white font-one w3-wide wrap" style="">WHEN <br class="line-break" /> & <br class="line-break" /> WHERE </span>
+    <center>
+     <hr style="width:60%;border:2px solid white" class="w3-round" />
+    </center>
+   </div>
+  </div>
+  <!-- Container (Contact Section) -->
+  <div class="bgimg-5 w3-display-container w3-container w3-padding w3-opacity-min" id="contact">
+   <div class="w3-padding w3-section">
+    <div class="w3-container w3-center">
+     <img src="https://www.w3schools.com/w3images/map.jpg" class="w3-image w3-round" style="width:100%; max-width:600px;" />
+     <br />
+     <br />
+     <span class="w3-large w3-text-white font-three" style="white-space:nowrap;">
+      <i class="fa fa-map-marker w3-hover-text-black"></i> Location </span>
+    </div>
+    <br />
+    <center>
+     <a href="#home" class="w3-button font-three w3-white">
+      <i class="fa fa-link w3-margin-right"></i>Google Map </a>
+    </center>
+   </div>
+  </div>
+  <!-- Footer -->
+  <footer class="w3-center font-three w3-black w3-border-top w3-padding-32">
+   <div class="w3-center w3-padding">
+    <img src="" class="gif" data-src="https://blogger.googleusercontent.com/img/a/AVvXsEid7GEz3XHyr2FA_JbR4p8OzR2_LCtz83WCdR-PVwMFKaJZOLWTcE_xVF8amw2IEp4b2BQ6sV8mmemPdNLlPZqoC2vZvUTgJN9CzJWpt0lAHaHdZBzW-7StA6kIDz7d6FuytUa3r_n_BtsY_qahGRt71CnNwWzmBc3GBMGDa7gCBQsiG-fyETaSeRrlGq4=w640-h500" alt="Save The Date" style="width:120px;height:100px;" />
+   </div>
+   <br />
+   <a href="#home" class="w3-button w3-black w3-hover-white w3-border">
+    <i class="fa fa-arrow-up w3-margin-right"></i>To the top </a>
+   <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+   </div>
+   <p> All Rights Reserved. <br />Powered by w3.css &copy; <a href="https://niyasali.w3spaces.com/" title="W3.CSS" target="_blank" class="w3-hover-text-green">Niyas Ali</a>
+   </p>
+  </footer>
+<script>
+ // Modal Image Gallery
+ function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+ }
+ // Change style of navbar on scroll
+ window.onscroll = function() {
+  myFunction()
+ };
+
+ function myFunction() {
+  var navbar = document.getElementById("myNavbar");
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+   navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+  } else {
+   navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+  }
+ }
+</script>
+<script>
+ function callback(entries) {
+  for (let i = 0; i < entries.length; i++) {
+   entries[i].target.src = (entries[i].isIntersecting) ? entries[i].target.getAttribute("data-src") : "";
+  }
+ }
+ const gifs = document.querySelectorAll(".gif");
+ const observer = new IntersectionObserver(callback);
+ for (let i = 0; i < gifs.length; i++) {
+  observer.observe(gifs[i]);
+ }
+</script>
+<script>
+ var countDownDate = new Date("sep 22, 2024 12:00:00").getTime();
+ const modal = document.getElementById("myModal");
+
+ function startConfettiAnimation(containerId, numConfetti) {
+  const container = document.getElementById(containerId);
+  for (let i = 0; i < numConfetti; i++) {
+   const confetti = document.createElement("div");
+   confetti.classList.add("confetti");
+   confetti.style.left = Math.random() * 100 + "%";
+   confetti.style.animationDelay = Math.random() * 8 + "s";
+   const randomSize = Math.random() * 10 + 8;
+   confetti.style.width = `${randomSize}px`;
+   confetti.style.height = `${randomSize}px`;
+   confetti.innerHTML = `
+	<svg
+		xmlns="http://www.w3.org/2000/svg" width="${randomSize}" height="${randomSize}" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+		<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" fill="#ff5274"></path>
+	</svg>`;
+   container.appendChild(confetti);
+  }
+ }
+ var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+  if (distance < 0) {
+   clearInterval(x);
+   document.getElementById("demo").innerHTML = "Just Married";
+   modal.style.display = "block";
+   startConfettiAnimation("confetti-container1", 25);
+   startConfettiAnimation("confetti-container2", 35);
+  }
+ }, 1000);
+ const closeBtn = document.querySelector(".close");
+ closeBtn.addEventListener("click", function() {
+  modal.style.display = "none";
+ });
+
+ function closeModel() {
+  var modelContainer = document.querySelector('.mymodel');
+  modelContainer.style.display = 'none';
+ }
+</script>
+</body>
+</html>
