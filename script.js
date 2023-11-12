@@ -21,18 +21,6 @@
  }
 
 
- function callback(entries) {
-  for (let i = 0; i < entries.length; i++) {
-   entries[i].target.src = (entries[i].isIntersecting) ? entries[i].target.getAttribute("data-src") : "";
-  }
- }
- const gifs = document.querySelectorAll(".gif");
- const observer = new IntersectionObserver(callback);
- for (let i = 0; i < gifs.length; i++) {
-  observer.observe(gifs[i]);
- }
-
-
  var countDownDate = new Date("sep 22, 2024 12:00:00").getTime();
  const modal = document.getElementById("myModal");
 
