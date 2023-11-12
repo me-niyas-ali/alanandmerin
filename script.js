@@ -1,4 +1,4 @@
-<script>
+
  // Modal Image Gallery
  function onClick(element) {
   document.getElementById("img01").src = element.src;
@@ -19,8 +19,8 @@
    navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
   }
  }
-</script>
-<script>
+
+
  function callback(entries) {
   for (let i = 0; i < entries.length; i++) {
    entries[i].target.src = (entries[i].isIntersecting) ? entries[i].target.getAttribute("data-src") : "";
@@ -31,8 +31,8 @@
  for (let i = 0; i < gifs.length; i++) {
   observer.observe(gifs[i]);
  }
-</script>
-<script>
+
+
  var countDownDate = new Date("sep 22, 2024 12:00:00").getTime();
  const modal = document.getElementById("myModal");
 
@@ -79,4 +79,3 @@
   var modelContainer = document.querySelector('.mymodel');
   modelContainer.style.display = 'none';
  }
-</script>
