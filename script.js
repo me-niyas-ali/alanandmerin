@@ -24,24 +24,6 @@
  var countDownDate = new Date("nov 11, 2023 13:37:00").getTime();
  const modal = document.getElementById("myModal");
 
- function startConfettiAnimation(containerId, numConfetti) {
-  const container = document.getElementById(containerId);
-  for (let i = 0; i < numConfetti; i++) {
-   const confetti = document.createElement("div");
-   confetti.classList.add("confetti");
-   confetti.style.left = Math.random() * 100 + "%";
-   confetti.style.animationDelay = Math.random() * 8 + "s";
-   const randomSize = Math.random() * 10 + 8;
-   confetti.style.width = `${randomSize}px`;
-   confetti.style.height = `${randomSize}px`;
-   confetti.innerHTML = `
-	<svg
-		xmlns="http://www.w3.org/2000/svg" width="${randomSize}" height="${randomSize}" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-		<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" fill="#ff5274"></path>
-	</svg>`;
-   container.appendChild(confetti);
-  }
- }
  var x = setInterval(function() {
   var now = new Date().getTime();
   var distance = countDownDate - now;
@@ -52,10 +34,8 @@
   document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
   if (distance < 0) {
    clearInterval(x);
-   document.getElementById("demo").innerHTML = "Just Married";
+   document.getElementById("demo").innerHTML = "Just Married ❤";
    modal.style.display = "block";
-   startConfettiAnimation("confetti-container1", 25);
-   startConfettiAnimation("confetti-container2", 35);
   }
  }, 1000);
  const closeBtn = document.querySelector(".close");
