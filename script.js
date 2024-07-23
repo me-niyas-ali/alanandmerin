@@ -21,7 +21,7 @@
  }
 
 
- var countDownDate = new Date("July 22, 2024 09:26:00").getTime();
+ var countDownDate = new Date("Sep 22, 2024 12:00:00").getTime();
  const modal = document.getElementById("myModal");
 
  var x = setInterval(function() {
